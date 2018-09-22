@@ -166,12 +166,6 @@
 		</profile>
 		<profile>
 			<id>coverage</id>
-			<activation>
-				<jdk>8</jdk>
-				<property>
-					<name>coverage</name>
-				</property>
-			</activation>
 			<build>
 				<plugins>
 					<plugin>
