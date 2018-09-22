@@ -11,6 +11,6 @@ cache:
 install:
   - mvn test-compile -DskipTests=true -B -V -P analysis
 script:
-  - mvn test jacoco:report -P coverage
+  - mvn test jacoco:report -Dcoverage=true
 after_success:
-  - mvn coveralls:report -P coverage
+  - mvn coveralls:report -Dcoverage=true
