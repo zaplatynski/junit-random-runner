@@ -11,6 +11,15 @@ cache:
 install:
   - mvn test-compile -DskipTests=true -B -V -P analysis
 script:
+  - jdk_switcher use oraclejdk8
   - mvn test jacoco:report -P coverage
+  - jdk_switcher use openjdk8
+  - mvn test jacoco:report -P coverage
+  - jdk_switcher use oraclejdk9
+  - mvn test
+  - jdk_switcher use oraclejdk10
+  - mvn test
+  - jdk_switcher use openjdk10
+  - mvn test
 after_success:
   - mvn coveralls:report -P coverage
